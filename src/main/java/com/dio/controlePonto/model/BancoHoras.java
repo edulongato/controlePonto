@@ -2,8 +2,7 @@ package com.dio.controlePonto.model;
 
 import lombok.*;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -14,6 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Builder
+@Entity
 public class BancoHoras {
 
     @AllArgsConstructor
@@ -21,12 +21,17 @@ public class BancoHoras {
     @EqualsAndHashCode
     @Embeddable
     public static class BancoHorasId implements Serializable {
+
         private Long idBancoHora;
+
         private Long idMovimento;
+
         private Long idUsuario;
+
     }
 
-    @EmbeddedId
+    @Id
+    @Embedded
     private BancoHorasId id;
     private LocalDateTime dataTrabalhada;
     private BigDecimal quantidadeHorasTrabalhadas;
