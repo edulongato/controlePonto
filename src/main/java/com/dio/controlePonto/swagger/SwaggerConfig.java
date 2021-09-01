@@ -39,7 +39,7 @@ public class SwaggerConfig {
     }
 
     @Bean
-    private ApiInfo apiInfo() {
+    public ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("API-REST")
                 .description("Api para gerenciamento de ponto e acesso.")
