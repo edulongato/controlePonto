@@ -20,12 +20,16 @@ public class Usuario {
     @Id
     private Long id;
     private String nome;
+
     @ManyToOne
     private CategoriaUsuario categoriaUsuario;
+
     @ManyToOne
     private Empresa empresa;
+
     @ManyToOne
     private NivelAcesso nivelAcesso;
+
     @ManyToOne
     private JornadaTrabalho jornadaTrabalho;
     private BigDecimal tolerancia;
